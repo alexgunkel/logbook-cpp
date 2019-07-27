@@ -1,0 +1,2 @@
+#define Logbook_VERSION_MAJOR @Logbook_VERSION_MAJOR@
+#define Logbook_VERSION_MINOR @Logbook_VERSION_MINOR@

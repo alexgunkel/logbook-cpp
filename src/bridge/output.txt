@@ -1,0 +1,4 @@
+Scanning dependencies of target desk_test
+[ 50%] Building CXX object Ship/CMakeFiles/desk_test.dir/desk_test.cpp.o
+[100%] Linking CXX executable desk_test
+[100%] Built target desk_test
