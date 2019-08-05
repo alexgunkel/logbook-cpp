@@ -1,5 +1,8 @@
-**
-!./**.cpp
-!./**.hpp
-!./**CMakeLists.txt
-
+Project.cbp
+*.cmake
+Project.layout
+logbook.project
+*.a
+*.kdev4
+*.vscode
+CMakeFiles

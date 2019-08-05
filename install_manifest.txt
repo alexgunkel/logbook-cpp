@@ -1,0 +1,3 @@
+/srv/cpp/logbook-cpp/logbook/bin/logbook
+/srv/cpp/logbook-cpp/logbook/lib/libbridge.a
+/srv/cpp/logbook-cpp/logbook/include/bridge.hpp
