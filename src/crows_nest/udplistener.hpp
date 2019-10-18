@@ -2,6 +2,7 @@
 #define UDPLISTENER_HPP
 
 #include <memory>
+#include <iostream>
 
 #include <boost/asio.hpp>
 
@@ -16,12 +17,15 @@ using boost::asio::io_context;
 namespace logbook
 {
 
+typedef short unsigned int port_t;
+  
 class UdpListener: public CrowsNestInterface
 {
-public:
-  UdpListener() {
+  public:
+  UdpListener(): UdpListener{55155} {};
+  UdpListener(port_t port) {
     io_context io{1};
-    so = std::make_unique<udp::socket>(io, udp::endpoint{udp::v4(), 55155});
+    so = std::make_unique<udp::socket>(io, udp::endpoint{udp::v4(), port});
   };
   ~UdpListener();
 
@@ -37,9 +41,7 @@ public:
             char data[1024];
             udp::endpoint sender_endpoint;
             size_t received = so->receive_from(boost::asio::buffer(data, 1024), sender_endpoint);
-            
-            std::string got{data, received};
-            receiver->receive(Message{got, "MSS Hope", "street of Gibraltar"});
+            receiver->receive(*Message::fromBufferString(data, received));
         }
     };
   

@@ -196,6 +196,19 @@ udplistener/fast:
 .PHONY : udplistener/fast
 
 #=============================================================================
+# Target rules for targets named ostreamwriter
+
+# Build rule for target.
+ostreamwriter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ostreamwriter
+.PHONY : ostreamwriter
+
+# fast build rule for target.
+ostreamwriter/fast:
+	$(MAKE) -f src/books/CMakeFiles/ostreamwriter.dir/build.make src/books/CMakeFiles/ostreamwriter.dir/build
+.PHONY : ostreamwriter/fast
+
+#=============================================================================
 # Target rules for targets named logbook_test
 
 # Build rule for target.
@@ -275,6 +288,7 @@ help:
 	@echo "... logbook"
 	@echo "... bridge"
 	@echo "... udplistener"
+	@echo "... ostreamwriter"
 	@echo "... logbook_test"
 	@echo "... gmock_main"
 	@echo "... gmock"

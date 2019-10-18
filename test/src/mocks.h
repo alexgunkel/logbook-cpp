@@ -2,12 +2,12 @@
 #define LOGBOOK_TEST_MOCKS_H_
 
 #include <gmock/gmock.h>
-#include "bridge.hpp"
+#include "bridge/bridge.hpp"
 
 class MockBook : public logbook::BookInterface {
 public:
   MOCK_METHOD(void, Write, (const logbook::Message&), (override));
-  MOCK_METHOD(const logbook::ship_name_t, ShipName, (), (override));
+  MOCK_METHOD(const logbook::logbook_name_t, LogbookName, (), (override));
 };
 
 class MockCrowsNest: public logbook::CrowsNestInterface {

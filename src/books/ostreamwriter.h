@@ -31,9 +31,9 @@ public:
     /**
      * Default constructor
      */
-    explicit OstreamWriter(ship_name_t title): OstreamWriter{title, std::cout} {};
+    explicit OstreamWriter(logbook_name_t title): OstreamWriter{title, std::cout} {};
     
-    OstreamWriter(ship_name_t t, ::std::ostream& o): out{o}, title{t} {};
+    OstreamWriter(logbook_name_t t, ::std::ostream& o): out{o}, title{t} {};
 
     /**
      * Copy Constructor
@@ -51,13 +51,13 @@ public:
       out << msg.Content() << std::endl;
     };
     
-    const ship_name_t ShipName() override {
+    const logbook_name_t LogbookName() override {
         return title;
     };
 
 private:
     std::ostream& out;
-    const ship_name_t title;
+    const logbook_name_t title;
     const char* timeFormat{"%Y-%m-%d %H:%M:%S %Z"};
 };
 

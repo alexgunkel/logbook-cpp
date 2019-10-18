@@ -252,6 +252,33 @@ message.cpp.s:
 	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/bridge/CMakeFiles/bridge.dir/build.make src/bridge/CMakeFiles/bridge.dir/message.cpp.s
 .PHONY : message.cpp.s
 
+portauthority.o: portauthority.cpp.o
+
+.PHONY : portauthority.o
+
+# target to build an object file
+portauthority.cpp.o:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/bridge/CMakeFiles/bridge.dir/build.make src/bridge/CMakeFiles/bridge.dir/portauthority.cpp.o
+.PHONY : portauthority.cpp.o
+
+portauthority.i: portauthority.cpp.i
+
+.PHONY : portauthority.i
+
+# target to preprocess a source file
+portauthority.cpp.i:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/bridge/CMakeFiles/bridge.dir/build.make src/bridge/CMakeFiles/bridge.dir/portauthority.cpp.i
+.PHONY : portauthority.cpp.i
+
+portauthority.s: portauthority.cpp.s
+
+.PHONY : portauthority.s
+
+# target to generate assembly for a file
+portauthority.cpp.s:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/bridge/CMakeFiles/bridge.dir/build.make src/bridge/CMakeFiles/bridge.dir/portauthority.cpp.s
+.PHONY : portauthority.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -274,6 +301,9 @@ help:
 	@echo "... message.o"
 	@echo "... message.i"
 	@echo "... message.s"
+	@echo "... portauthority.o"
+	@echo "... portauthority.i"
+	@echo "... portauthority.s"
 .PHONY : help
 
 

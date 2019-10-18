@@ -1,3 +1,9 @@
 [submodule "test/lib/googletest"]
 	path = test/lib/googletest
 	url = https://github.com/google/googletest.git
+[submodule "vendor/uWebSockets"]
+	path = vendor/uWebSockets
+	url = git@github.com:uNetworking/uWebSockets.git
+[submodule "vendor/rapidjson"]
+	path = vendor/rapidjson
+	url = git@github.com:Tencent/rapidjson.git

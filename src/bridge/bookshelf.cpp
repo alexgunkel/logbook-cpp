@@ -3,6 +3,7 @@
 #include <memory>
 #include <iostream>
 #include <stdexcept>
+#include <boost/uuid/uuid_io.hpp>
 
 using std::unique_ptr;
 using std::forward;
@@ -17,12 +18,14 @@ BookShelf::~BookShelf() {};
 
 void BookShelf::add(unique_ptr<BookInterface> bookPtr)
 {
+  std::cout << "register book " << bookPtr->LogbookName() << std::endl;
     listOfBooks.push_back(forward<unique_ptr<BookInterface>>(bookPtr));
 }
 
-BookInterface & BookShelf::findByShipName(logbook::ship_name_t ship) const
+BookInterface & BookShelf::findByShipName(logbook::logbook_name_t ship) const
 {
     for (auto it = listOfBooks.begin(); it != listOfBooks.end(); ++it)  {
+      std::cout << "found a log-book for " << ship << std::endl;
         return **it;
     }
     

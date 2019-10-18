@@ -198,6 +198,33 @@ ostreamwriter.cpp.s:
 	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/books/CMakeFiles/ostreamwriter.dir/build.make src/books/CMakeFiles/ostreamwriter.dir/ostreamwriter.cpp.s
 .PHONY : ostreamwriter.cpp.s
 
+websocket.o: websocket.cpp.o
+
+.PHONY : websocket.o
+
+# target to build an object file
+websocket.cpp.o:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/books/CMakeFiles/ostreamwriter.dir/build.make src/books/CMakeFiles/ostreamwriter.dir/websocket.cpp.o
+.PHONY : websocket.cpp.o
+
+websocket.i: websocket.cpp.i
+
+.PHONY : websocket.i
+
+# target to preprocess a source file
+websocket.cpp.i:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/books/CMakeFiles/ostreamwriter.dir/build.make src/books/CMakeFiles/ostreamwriter.dir/websocket.cpp.i
+.PHONY : websocket.cpp.i
+
+websocket.s: websocket.cpp.s
+
+.PHONY : websocket.s
+
+# target to generate assembly for a file
+websocket.cpp.s:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f src/books/CMakeFiles/ostreamwriter.dir/build.make src/books/CMakeFiles/ostreamwriter.dir/websocket.cpp.s
+.PHONY : websocket.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -214,6 +241,9 @@ help:
 	@echo "... ostreamwriter.o"
 	@echo "... ostreamwriter.i"
 	@echo "... ostreamwriter.s"
+	@echo "... websocket.o"
+	@echo "... websocket.i"
+	@echo "... websocket.s"
 .PHONY : help
 
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>LogBook</title>
+    <link rel="stylesheet" href="/public/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/public/assets/js/main.js"></script>
+</head>
+<body data-endpoint="/data">
+<nav id="mainnav" class="navbar navbar-expand-md navbar-dark bg-dark navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand" title="LogBook - log your bugs!"> LogBook MSS Hope</span>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav nav-pills navbar-right">
+                <li class="nav-item active">
+                    <a id="btn-reload" class="nav-link" title="Reload" href="/"><span class="glyphicon glyphicon-refresh"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link js-toggle-details active" title="Show details" href="/"><span class="glyphicon glyphicon-zoom-in"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="js-toggle-autoscroll" title="Auto Scroll" href="/"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a id="btn-up" title="Scroll to Top"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a id="btn-down" title="Scroll to Bottom"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+                </li>
+            </ul>
+            <ul id="nav-filter" class="nav nav-pills navbar-right nav-filter">
+                <li>
+                    <button type="button" class="btn btn-info js-toggleSeverityFilter active" data-severity="info" title="enable/disable info">Info</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-warning js-toggleSeverityFilter active" data-severity="warning" title="enable/disable warnings">Warnings</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-danger js-toggleSeverityFilter active" data-severity="error" title="enable/disable errors">Errors</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="loader"></div>
+</nav>
+
+<main role="main" class="container-fluid" id="output">
+
+</main>
+</body>
+</html>

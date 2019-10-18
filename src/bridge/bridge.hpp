@@ -1,6 +1,8 @@
 #ifndef LOGBOOK_BRIDGE_BRIDGE_HPP_
 #define LOGBOOK_BRIDGE_BRIDGE_HPP_
 
+#include "message.hpp"
+
 #include <memory>
 #include <ctime>
 #include <string>
@@ -11,33 +13,6 @@ namespace logbook {
 
 using std::unique_ptr;
 using std::shared_ptr;
-
-typedef const char* ship_name_t;
-typedef const char* journey_t;
-typedef std::time_t time_t;
-typedef std::string message_t;
-typedef const char* passenger_t;
-typedef std::set<passenger_t> passenger_list_t;
-
-class Message {
-public:
-    Message(const message_t& msg, const ship_name_t& ship, const journey_t& journey);
-    ~Message();
-
-    ship_name_t ShipName() const noexcept;
-    journey_t Journey() const noexcept;
-    const time_t Received() const noexcept;
-    const time_t Created() const noexcept;
-    message_t Content() const noexcept;
-
-private:
-    message_t msg;
-    ship_name_t shipName;
-    journey_t journey;
-    time_t received;
-    time_t created;
-    passenger_list_t passengerList;
-};
 
 class ReceiverInterface
  {
@@ -68,7 +43,7 @@ class BookInterface {
     /**
      * Individual logbook users are identified by ship-names.
      */
-    virtual const ship_name_t ShipName() = 0;
+    virtual const logbook_name_t LogbookName() = 0;
 };
 
 class BookShelf {
@@ -84,7 +59,7 @@ public:
     ~BookShelf();
 
     void add(unique_ptr<BookInterface> bookPtr);
-    BookInterface& findByShipName(ship_name_t ship) const;
+    BookInterface& findByShipName(logbook_name_t ship) const;
 private:
     std::size_t maxNumberOfBooks;
     std::vector<std::unique_ptr<BookInterface>> listOfBooks;

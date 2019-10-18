@@ -19,6 +19,7 @@ public:
 
 private:
   std::unique_ptr<CrowsNestInterface> listener;
+  std::shared_ptr<BookShelf> bookshelf;
 };
 
 } // namespace logbook

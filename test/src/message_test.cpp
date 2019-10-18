@@ -16,17 +16,26 @@
 
 #include <gtest/gtest.h>
 
-#include "bridge.hpp"
+#include <boost/uuid/uuid_io.hpp>
+
+#include "bridge/message.hpp"
 
 using namespace logbook;
 
-class MessageTest : public ::testing::Test {
-protected:
-    Message m_1{"SOS", "MSS Hope", "street of gibraltar"};
-};
+TEST(MessageFactoryTest, TestFromStringBuffer) {
+  char input[] = "882b3240-d74e-4f18-b68c-1667c645194b: 3 1566749699 [Test - 8bff0b0fd50db220f8a986bfa892932d - TestLogger] Test log entry";
 
-TEST_F(MessageTest, getters) {
-  EXPECT_STREQ( "MSS Hope", m_1.ShipName()) << "test ship-name";
-  EXPECT_STREQ( "street of gibraltar", m_1.Journey()) << "test ship-name";
-  EXPECT_EQ( "SOS", m_1.Content()) << "test ship-name";
+  try
+  {
+    auto msg = Message::fromBufferString(input, 120);
+
+    EXPECT_EQ("882b3240-d74e-4f18-b68c-1667c645194b", to_string(msg->LogbookName())) << "correct logbookname";
+    EXPECT_EQ(1566749699, int(msg->Created())) << "time detection";
+    EXPECT_EQ(3, msg->Severity()) << "test severity";
+    EXPECT_EQ("Test log entry", msg->Content()) << "correct message-content";
+  }
+  catch(const std::runtime_error& e)
+  {
+    FAIL() << e.what();
+  } 
 }

@@ -306,6 +306,33 @@ src/ostreamwriter_test.cpp.s:
 	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f test/CMakeFiles/logbook_test.dir/build.make test/CMakeFiles/logbook_test.dir/src/ostreamwriter_test.cpp.s
 .PHONY : src/ostreamwriter_test.cpp.s
 
+src/portauthority_test.o: src/portauthority_test.cpp.o
+
+.PHONY : src/portauthority_test.o
+
+# target to build an object file
+src/portauthority_test.cpp.o:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f test/CMakeFiles/logbook_test.dir/build.make test/CMakeFiles/logbook_test.dir/src/portauthority_test.cpp.o
+.PHONY : src/portauthority_test.cpp.o
+
+src/portauthority_test.i: src/portauthority_test.cpp.i
+
+.PHONY : src/portauthority_test.i
+
+# target to preprocess a source file
+src/portauthority_test.cpp.i:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f test/CMakeFiles/logbook_test.dir/build.make test/CMakeFiles/logbook_test.dir/src/portauthority_test.cpp.i
+.PHONY : src/portauthority_test.cpp.i
+
+src/portauthority_test.s: src/portauthority_test.cpp.s
+
+.PHONY : src/portauthority_test.s
+
+# target to generate assembly for a file
+src/portauthority_test.cpp.s:
+	cd /srv/cpp/logbook-cpp/logbook && $(MAKE) -f test/CMakeFiles/logbook_test.dir/build.make test/CMakeFiles/logbook_test.dir/src/portauthority_test.cpp.s
+.PHONY : src/portauthority_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +361,9 @@ help:
 	@echo "... src/ostreamwriter_test.o"
 	@echo "... src/ostreamwriter_test.i"
 	@echo "... src/ostreamwriter_test.s"
+	@echo "... src/portauthority_test.o"
+	@echo "... src/portauthority_test.i"
+	@echo "... src/portauthority_test.s"
 .PHONY : help
 
 

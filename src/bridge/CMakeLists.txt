@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(logbook C CXX)
 
-set(HEADERS bridge.hpp)
-set(SOURCE_FILES message.cpp bookshelf.cpp captainsdesk.cpp)
+find_package(Boost 1.70.00)
+message(STATUS "Boost version: ${Boost_VERSION}")
+
+set(HEADERS bridge.hpp portauthority.hpp)
+set(SOURCE_FILES message.cpp bookshelf.cpp captainsdesk.cpp portauthority.cpp)
 
 add_library(bridge SHARED STATIC ${SOURCE_FILES} ${HEADERS})
 

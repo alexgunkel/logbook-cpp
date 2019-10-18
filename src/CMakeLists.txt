@@ -11,12 +11,21 @@ configure_file (
 
 add_subdirectory(bridge)
 add_subdirectory(crows_nest)
-include_directories(${LOGBOOK_SRC_DIR})
+add_subdirectory(books)
+
+include_directories(${LOGBOOK_SRC_DIR}
+  ${LOGBOOK_VENDOR_DIR}/uWebSockets/src/
+  ${LOGBOOK_VENDOR_DIR}/uWebSockets/uSockets/src/)
+link_directories(${LOGBOOK_VENDOR_DIR}/lib)
+
 
 set(HEADER_FILES logbookserver.hpp)
 set(SOURCE_FILES main.cpp logbookserver.cpp)
 
+find_package(ZLIB)
+
 add_executable(logbook ${SOURCE_FILES} ${HEADER_FILES})
-target_link_libraries(logbook bridge udplistener)
+target_link_libraries(logbook bridge udplistener ostreamwriter ${ZLIB_LIBRARIES} ${LOGBOOK_VENDOR_DIR}/lib/uSockets.a)
+set_property(TARGET logbook PROPERTY CXX_STANDARD 17)
 
 install(TARGETS logbook DESTINATION ${LOGBOOK_BIN_DIR})
